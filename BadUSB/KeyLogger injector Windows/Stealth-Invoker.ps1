@@ -17,7 +17,7 @@ Set-ExecutionPolicy unrestricted -Force
 if ($DOWNLOADER -eq "downloader.TRUE") {
     $LINK = (Get-Content -Path .\config.txt -TotalCount 4)[-1]
 
-    wget $LINK -OutFile $SCRIPT_PATH
+    Invoke-WebRequest $LINK -OutFile $SCRIPT_PATH
 
     Sleep -Milliseconds 50
 }

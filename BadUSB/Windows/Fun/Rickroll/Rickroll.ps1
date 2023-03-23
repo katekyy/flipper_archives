@@ -88,17 +88,6 @@ try
     ## Loop through the frames and display them
     while($true)
     {
-        if([Console]::KeyAvailable)
-        {
-            $key = [Console]::ReadKey()
-            if(($key.Key -eq 'Escape') -or
-                ($key.Key -eq 'Q') -or
-                ($key.Key -eq 'C'))
-            {
-                break
-            }
-        }
-        
         if((-not $player.HasError) -and ($player.PlayState -eq 0)) { break }
         $host.UI.RawUI.CursorPosition = New-Object System.Management.Automation.Host.Coordinates 0,0
         Write-Host (($frames[$counter] -split "`t") -join "`r`n")

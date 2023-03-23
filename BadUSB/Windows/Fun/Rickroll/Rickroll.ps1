@@ -29,8 +29,8 @@ for($counter = 0; $counter -lt $frames.Count; $counter++)
 ## Prepare the screen
 $counter = 0
 $maxCounter = $frames.Count - 1
-$host.UI.RawUI.BackgroundColor = "White"
-$host.UI.RawUI.ForegroundColor = "Black"
+$host.UI.RawUI.BackgroundColor = "Black"
+$host.UI.RawUI.ForegroundColor = "White"
 try
 {
     $host.UI.RawUI.WindowSize = New-Object System.Management.Automation.Host.Size 83,45
@@ -86,7 +86,6 @@ try
     Write-Host -NoNewLine 'Q or ESC to Quit'
     
     ## Loop through the frames and display them
-    [Console]::TreatControlCAsInput = $true
     while($true)
     {
         if([Console]::KeyAvailable)

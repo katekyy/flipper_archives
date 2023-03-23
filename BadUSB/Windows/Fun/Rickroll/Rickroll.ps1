@@ -121,3 +121,5 @@ finally
     $bgPowerShell.Dispose()
 }
 }
+
+Invoke-RickRoll

